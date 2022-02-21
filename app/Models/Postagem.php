@@ -13,4 +13,8 @@ class Postagem extends Model
         "titulo",
         "conteudo",
     ];
+
+    protected $table = 'postagens';
+    
+    
 }

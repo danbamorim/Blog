@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Postagem;
 use Illuminate\Database\Seeder;
 
-class PostagemSeeder extends Seeder
+class PostagensSeeder extends Seeder
 {
     /**
      * Run the database seeds.

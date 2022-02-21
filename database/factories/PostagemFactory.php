@@ -12,8 +12,8 @@ class PostagemFactory extends Factory
      */
     public function definition() {
         return [
-            'titulo' => $this->faker->titulo,
-            'conteudo' => $this->faker->text()
+            'titulo' => $this->faker->title,
+            'conteudo' => $this->faker->text() 
         ];
     } 
 }
