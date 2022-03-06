@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Postagem;
+use Illuminate\Support\Facades\Blade;
 
 class PostagensController extends Controller
 {
@@ -54,7 +55,9 @@ class PostagensController extends Controller
      */
     public function show($id)
     {
-        //
+        $conteudo = Postagem::find($id);
+        return view('site.postagens.show',['conteudoCarregado'=>$conteudo]);
+
     }
 
     /**
@@ -65,7 +68,8 @@ class PostagensController extends Controller
      */
     public function edit($id)
     {
-        //
+        $postagen = Postagem::find($id);
+        return view('site.postagens.edit',['postagen' => $postagen ]);
     }
 
     /**
@@ -77,7 +81,9 @@ class PostagensController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $postagem = Postagem::find($id);
+        $postagem->update($request->all());
+        return redirect(route('postagens.show',['postagen'=>$id]));
     }
 
     /**
@@ -87,7 +93,10 @@ class PostagensController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    { 
+        $postagem = Postagem::find($id);
+        $postagem->delete();
+        return redirect(route('postagens.index'));
     }
+
 }
