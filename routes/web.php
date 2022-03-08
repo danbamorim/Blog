@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\Controllers\BookController@index'); 
 
 Route::resource('postagens','App\Http\Controllers\PostagensController');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
