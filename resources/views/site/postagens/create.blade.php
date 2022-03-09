@@ -24,9 +24,9 @@
 <form action="{{route('postagens.store')}}" method="POST">
     @csrf 
     </br> 
-    <input type="text" id="txt" />
+    <input type="text" id="txt" name="titulo"/>
     </br>
-    <textarea id="txt2"></textarea>
+    <textarea id="txt2" name="conteudo"></textarea>
     <input type="submit">
 </form>
 
