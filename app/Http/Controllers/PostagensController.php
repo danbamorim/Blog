@@ -44,7 +44,7 @@ class PostagensController extends Controller
             'titulo'=>$request->titulo,
             'conteudo'=>$request->conteudo 
         ]);
-        return redirect(route('postagens.show',['postagen'=>$novaPostagem->getKey()]));
+        return redirect(route('posts.show',['postagen'=>$novaPostagem->getKey()]));
     }
 
     /**
@@ -83,7 +83,7 @@ class PostagensController extends Controller
     {
         $postagem = Postagem::find($id);
         $postagem->update($request->all());
-        return redirect(route('postagens.show',['postagen'=>$id]));
+        return redirect(route('posts.show',['postagen'=>$id]));
     }
 
     /**
@@ -96,7 +96,7 @@ class PostagensController extends Controller
     { 
         $postagem = Postagem::find($id);
         $postagem->delete();
-        return redirect(route('postagens.index'));
+        return redirect(route('posts.index'));
     }
 
 }

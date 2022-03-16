@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\PostagensController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','App\Http\Controllers\BookController@index'); 
+ 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => 'auth'],
-function()
-{ 
-    Route::resource('postagens','App\Http\Controllers\PostagensController');
-});
+Route::auth();
+
+ Route::resource('/posts',PostagensController::class)->middleware('auth',['except'=>['index','show']]);

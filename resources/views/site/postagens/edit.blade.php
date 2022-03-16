@@ -1,7 +1,7 @@
 @extends('site.base')
 @section('conteudo')
 <p>Este será o formulário de atualização </p>
-<form action="{{route('postagens.update', ['postagen' => $postagen->getKey()])}}" method="POST">
+<form action="{{route('posts.update', ['postagen' => $postagen->getKey()])}}" method="POST">
     @csrf
     @method('PUT')
     </br>
@@ -12,7 +12,7 @@
     <input type="submit">
 </form>
 
-<form action="{{route('postagens.destroy',$postagen->id)}}" method="POST">
+<form action="{{route('posts.destroy',$postagen->id)}}" method="POST">
     <button type="submit" class="btn btn-block btn-primary">Deletar</button>
     @method('DELETE')
     @csrf
