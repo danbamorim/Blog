@@ -96,14 +96,14 @@
                     <div class="card">
                         <div class="card-header">Login</div>
                         <div class="card-body">
-                            <form action="" method="">
+                            <form action="{{route('login')}}" method="POST">
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                     <div class="col-md-6">
                                         <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
                                     </div>
                                 </div>
-
+                                @csrf
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
@@ -127,8 +127,8 @@
                                     </button>
 
                                 </div>
+                            </form>  
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -136,13 +136,7 @@
         </div>
 
     </main>
-
-
-
-
-
-
-
+    
 </body>
 
 </html>
