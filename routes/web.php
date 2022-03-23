@@ -21,4 +21,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::auth();
 
- Route::resource('/posts',PostagensController::class)->middleware('auth',['except'=>['index','show']]);
+//Route::resource('/posts',PostagensController::class)->middleware('auth',['except'=>['index','show']]);
+
+
+
+Route::resource('/posts', PostagensController::class, ['only' => ['index', 'show']]);
+
+
+//Route::group(['middleware' => 'auth'], function () {
+//    Route::resource('/posts', PostagensController::class, ['except' => ['index', 'show']]);
+// });

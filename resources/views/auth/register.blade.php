@@ -98,12 +98,45 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">Register</div>
-                        <div class="card-body">
+
+                                @error('nome')
+                                    <span class="" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                @error('email')
+                                    <span class="" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                @error('password')
+                                    <span class="" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                @error('password_confirmation')
+                                    <span class="" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             <form action="{{route('register')}}" method="POST">
                                 <div class="form-group row">
-                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                    <label for="nome" class="col-md-4 col-form-label text-md-right">Nome</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
+                                        <input type="text" id="nome" class="form-control" name="nome" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="email" class="form-control" name="email" required autofocus>
+                                        <div class="invalid-feedback">
+                                            Please choose a username.
+                                        </div>
                                     </div>
                                 </div>
                                 @csrf
@@ -111,14 +144,15 @@
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
                                         <input type="password" id="password" class="form-control" name="password" required>
-                                    </div>
+                
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right"> Repeat Password</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right"> Password Confirmation</label>
                                     <div class="col-md-6">
-                                        <input type="password" id="password" class="form-control" name="password" required>
-                                    </div>
+                                        <input type="password" id="password_confirmation" class="form-control" name="password_confirmation" required>
+                                        
+                                    
                                 </div>
 
 
@@ -128,7 +162,7 @@
                                     </button>
 
                                 </div>
-                            </form>   
+                            </form>
                         </div>
                     </div>
                 </div>
