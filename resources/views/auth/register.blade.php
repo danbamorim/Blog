@@ -83,10 +83,18 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                There were some errors with your request.
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
             </div>
         </div>
     </nav>
@@ -99,74 +107,52 @@
                     <div class="card">
                         <div class="card-header">Register</div>
 
-                                @error('nome')
-                                    <span class="" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        
 
-                                @error('email')
-                                    <span class="" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                @error('password')
-                                    <span class="" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                @error('password_confirmation')
-                                    <span class="" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                            <form action="{{route('register')}}" method="POST">
-                                <div class="form-group row">
-                                    <label for="nome" class="col-md-4 col-form-label text-md-right">Nome</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="nome" class="form-control" name="nome" required autofocus>
+                        <form action="{{route('register')}}" method="POST">
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">name</label>
+                                <div class="col-md-6"> 
+                                    <input type="text" id="name" class="form-control" name="name" required autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="email" class="form-control" name="email" required autofocus>
+                                    <div class="invalid-feedback">
+                                        Please choose a username.
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="email" class="form-control" name="email" required autofocus>
-                                        <div class="invalid-feedback">
-                                            Please choose a username.
-                                        </div>
-                                    </div>
-                                </div>
-                                @csrf
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" id="password" class="form-control" name="password" required>
-                
+                            </div>
+                            @csrf
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="password" class="form-control" name="password" required>
+
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right"> Password Confirmation</label>
                                     <div class="col-md-6">
                                         <input type="password" id="password_confirmation" class="form-control" name="password_confirmation" required>
-                                        
-                                    
-                                </div>
 
 
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Register
-                                    </button>
+                                    </div>
 
-                                </div>
-                            </form>
-                        </div>
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            Register
+                                        </button>
+
+                                    </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         </div>
 

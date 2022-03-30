@@ -19,13 +19,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::auth();
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class,'login'])->name('login');
 
-//Route::resource('/posts',PostagensController::class)->middleware('auth',['except'=>['index','show']]);
+Route::post('/logout', [App\Http\Controllers\Auth\LogoutController::class,'logout'])->name('logout');
 
-
-
+Route::resource('/posts',PostagensController::class)->middleware('auth',['except'=>['index','show']]);
 Route::resource('/posts', PostagensController::class, ['only' => ['index', 'show']]);
+//Route::resource('/posts', PostagensController::class);
+//Route::resource('/posts', PostagensController::class)->middleware('auth');
 
 
 //Route::group(['middleware' => 'auth'], function () {
