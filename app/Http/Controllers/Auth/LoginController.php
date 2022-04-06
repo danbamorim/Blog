@@ -54,7 +54,7 @@ public function logout(Request $request)
 
         return $request->wantsJson()
         ? new JsonResponse([], 204)
-        : redirect('/');
+        : redirect(route('login'));
     }
 
 }
