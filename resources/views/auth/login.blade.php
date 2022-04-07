@@ -47,6 +47,10 @@
     .card-header {
         color: red;
     }
+    .card{
+        color:red;
+    }
+    
 </style>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -77,48 +81,40 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                There were some errors with your request.
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 
-            </div>
-        </div>
-    </nav>
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        There were some errors with your request.
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 
     <main class="login-form">
         <div class="cotainer">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">Login</div>
+                        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                            <h1 class="display-4 fw-normal" style="font-family: FreeMono, monospace" >Login</h>
+                        </div>
                         <div class="card-body">
                             <form action="{{route('login')}}" method="POST">
 
                                 <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                    <label for="email" class="col-md-4 col-form-label text-md-right" style="font-family: FreeMono, monospace" >E-Mail Address : </label>
                                     <div class="col-md-6">
                                         <input type="text" id="email" class="form-control" name="email" required autofocus>
                                     </div>
                                 </div>
                                 @csrf
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right"style="font-family: FreeMono, monospace">Password : </label>
                                     <div class="col-md-6">
                                         <input type="password" id="password" class="form-control" name="password" required>
                                     </div>
