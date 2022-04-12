@@ -48,7 +48,7 @@
         color: red;
     }
     .card{
-        color:red;
+        color:#800000;
     }
     
 </style>

@@ -1,3 +1,4 @@
+@extends('layouts.app')
 @extends('site.base')
 @section('conteudo')
 <h1>{{$conteudoCarregado->titulo}}</h1><p>{{$conteudoCarregado->conteudo}}

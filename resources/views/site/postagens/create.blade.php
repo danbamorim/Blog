@@ -1,4 +1,5 @@
 @extends('site.base')
+@extends('layouts.app')
 @section('conteudo')
 <p>Este será o formulário de criação de postagens </p>
 <style>
