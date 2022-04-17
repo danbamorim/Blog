@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('conteudo')
+@section('content')
 
 <p>Este é um conteúdo dinâmico</p>
 </br>
