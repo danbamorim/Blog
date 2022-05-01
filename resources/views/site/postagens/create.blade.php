@@ -3,7 +3,7 @@
 @section('conteudo')
 <p>Este será o formulário de criação de postagens </p>
 <style>
-    textarea {
+    textarea  {
         width: 50%;
         height: 150px;
         padding: 12px 20px;
@@ -27,7 +27,7 @@
     </br> 
     <input type="text" id="txt" name="titulo"/>
     </br>
-    <textarea id="txt2" name="conteudo"></textarea>
+    <textarea id="area-digitacao" name="conteudo"></textarea>
     <input type="submit">
 </form>
 
